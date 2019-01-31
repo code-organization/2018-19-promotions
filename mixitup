@@ -1,0 +1,1127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+<style>
+    /*.mix {*/
+    /*background-color: #fff;*/
+    /*height: 350px;*/
+    /*color: #000;*/
+    /*padding: 10px;*/
+    /*}*/
+
+    .checkbox label {padding-left:0;}
+
+    .mix {
+        display: none;
+        background-color: #fff;
+        color: #000;
+        padding: 10px;
+    }
+
+    .inner-box {
+
+        background-color: #fff;
+        height: 145px;
+        border-bottom: solid black 1px;
+        border-left: solid black 1px;
+        border-right: solid black 1px;
+        text-align: center;
+    }
+
+    .giveaway-img {
+        float: right;
+    }
+
+    .mix a {
+        color: #fff;
+        font-size: 16px;
+        font-family: 'Open Sans Condensed', sans-serif;
+        font-weight: 700;
+    }
+
+    .date {
+        font-family: 'Open Sans Condensed', sans-serif;
+        font-weight: 700;
+    }
+
+    .dayofweek {
+        font-family: 'Open Sans Condensed', sans-serif;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+
+    .filter-btn {
+        text-transform: uppercase !important;
+        margin: 5px;
+        height: 40px;
+        background-color: darkgrey;
+        color: #fff;
+        border: solid black 1px;
+    }
+
+    .filter-btn:active {
+    }
+
+    .filter-btn:focus {
+        background-color: #28a745;
+        outline: none !important
+    }
+
+    .btn-sm {
+        background: #28a745;
+        color: #ffffff;
+        border: 1px solid #43952A !important;
+    }
+
+    .gray-box {
+        background-image: linear-gradient(to right, #ef8b1f, #ef586b);;
+        height: 10px;
+        text-align: center;
+
+    }
+
+    /*Form CSS*/
+    input[type="checkbox"] {
+        width: 150px;
+        margin-bottom: 10px;
+
+    }
+
+    /*Changes checkbox buttons*/
+    label, select {
+        text-transform: uppercase;
+        height: 35px;
+        width: 100%;
+        background-color: #666;
+        /*box-shadow: 0px 8px 8px 0px rgba(0,0,0,0.2);*/
+        color: white;
+        font-family: 'Open Sans Condensed', sans-serif;
+    }
+    .filterReset{
+        text-transform: uppercase; height: 35px; width:100%; background-color: #fff; font-family:'Open Sans Condensed', sans-serif; text-align: center;
+        padding-top: 4px;
+        display: block;
+        font-size: 18px;
+        margin: 4px;
+
+        font-weight: 700;
+        border: solid black 1px;
+        border-radius:4px;
+        overflow: auto;
+    }
+    .filterReset:hover{background-color: #dddddd}
+
+    div fieldset input {
+        margin-right: 100px;
+    }
+
+    .checkbox {
+        margin: 4px;
+        background-color: #EFEFEF;
+        overflow: auto;
+    }
+
+    .checkbox fieldset {
+        background-color: #fff;
+        border: 0 !important;
+    }
+
+    .checkbox fieldset label {
+        text-align: center;
+        padding-top: 4px;
+        display: block;
+        font-size: 18px;
+        font-family: 'Open Sans Condensed', sans-serif;
+        font-weight: 700;
+        border: solid black 1px;
+        border-radius:4px;
+    }
+
+    /*.checkbox fieldset input {opacity:0;}*/
+    .checkbox input:checked + label {
+        background-color: #fff;
+        color: #000;
+        border: solid black 3px;
+        font-size: 20px;
+        font-family: 'Open Sans Condensed', sans-serif;
+        font-weight: 700
+    }
+
+    .checkbox fieldset label:hover {
+        background-color: #fff;
+        color: #000;
+        font-weight: 900;
+    }
+
+    .btn {
+        border-radius: 0 !important
+    }
+
+    fieldset {
+        display: block;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+
+    }
+
+    fieldset {
+        border: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .checkbox fieldset label:hover {
+
+    }
+
+    .info-list {
+        list-style-type: none;
+        padding-left: 0 !important;
+        text-align: center;
+        margin: 0 auto !important;
+    }
+
+    .info-list-item {
+        display: inline-block;
+        text-align: center;
+    }
+
+    .noResults {
+        font-size: 20px;
+        font-family: 'Open Sans Condensed', sans-serif;
+        font-weight: 700;
+        padding-left: 30px;
+    }
+
+    .concert-img {
+        display: block;
+        max-width: 100%;
+        margin: auto
+    }
+
+    @media screen and (min-width: 100px) {
+
+        .inner-box {
+            padding: 15px 0px;
+        }
+
+        .center-info-item {
+            display: inline-block;
+            text-align: center;
+            padding: 4px;
+            font-family: 'Open Sans Condensed', sans-serif;
+
+            margin: 0 auto;
+        }
+
+    }
+
+    @media screen and (min-width: 480px) {
+
+        .inner-box {
+            padding: 15px 0px;
+        }
+
+        .center-info-item {
+            display: inline-block;
+            text-align: center;
+            padding: 4px
+        }
+
+    }
+
+    @media screen and (min-width: 790px) {
+        .inner-box {
+            padding: 25px 0px;
+        }
+
+        .center-info-item {
+            display: inline-block;
+            text-align: center;
+            padding: 12px
+        }
+    }
+</style>
+</head>
+<body>
+
+
+<div style="background-color:#fff;padding:2em">
+
+    <div class="row">
+        <div class="">
+            <h2 style="padding:0 .5em">2018-2019 Ticket Promotions</h2>
+        </div>
+    </div><!-- end of row -->
+
+    <!--Start of the Form-->
+
+    <div class="form">
+        <form id="Filters">
+            <div class="row">
+                <div class="col-lg-3 col-md-12">
+
+                    <h3 style="padding:1em 0;">Sort by Month</h3>
+
+
+                    <div class="group">
+                        <fieldset>
+                            <select>
+                                <option class="unselected" value="">All</option>
+                                <option value=".october">October</option>
+                                <option value=".november">November</option>
+                                <option value=".december">December</option>
+                                <option value=".january">January</option>
+                                <option value=".february">February</option>
+                                <option value=".march">March</option>
+                                <option value=".april">April</option>
+                            </select>
+                        </fieldset>
+                    </div>
+
+                </div>
+
+                <div class="col-lg-9 col-md-12">
+
+                    <h3 style="padding:1em 0;">Sort by Event</h3>
+                    <div class="group col-sm-3 col-xs-12">
+                        <div class="checkbox">
+                            <fieldset>
+                                <input type="checkbox" value=".concert" id="concert-box" style="visibility: hidden"/>
+                                <label for="concert-box">Concert Series</label>
+
+                            </fieldset>
+                        </div>
+                    </div>
+
+                    <div class="group col-sm-3 col-xs-12">
+                        <div class="checkbox">
+                            <fieldset>
+                                <input type="checkbox" value=".veteran" id="vet-box" style="visibility: hidden"/>
+                                <label for="vet-box">Veteran Games</label>
+                            </fieldset>
+                        </div>
+                    </div>
+
+                    <div class="group col-sm-3 col-xs-12">
+                        <div class="checkbox">
+                            <fieldset>
+                                <input type="checkbox" value=".beer" id="beer-box" style="visibility: hidden"/>
+                                <label for="beer-box">1 Ticket + 2 Beers</label>
+                            </fieldset>
+                        </div>
+                    </div>
+                    <div class="col-sm-3 col-xs-12">
+                        <button class="filterReset">Clear Filters</button>
+                    </div>
+
+                </div>
+            </div>
+        </form>
+    </div><!-- end of row -->
+
+
+    <div id="Container" class=" row">
+
+
+        <!--Start of mix-target box-->
+        <div style="display: inline-block" class="col-md-4 col-xs-12 col-sm-6 mix november veteran"
+        >
+            <div class="gray-box"><a href="#"></a></div>
+            <img class="concert-img"
+                 src="https://www.nba.com/.element/media/2.0/teamsites/spurs/Rosalie/img/spurs/vetsday.jpg" width="100%"
+            >
+            <div class="inner-box">
+
+                <ul class="info-list">
+                    <li class="info-list-item"><img
+                            src="https://i.cdn.turner.com/nba/nba/.element/media/2.0/teamsites/spurs/Schad/img/PostgameTeams/HOU.png"
+                            width="76" height="64"></li>
+                    <li class="center-info-item"><strong>Saturday</strong><br>November 10, 2018</li>
+                    <li class="info-list-item">
+                        <!--<div class="buyButton">-->
+
+                        <!--<a class="btn  btn-sm blackBtn"-->
+                        <!--href="https://auth.govx.com/tickets/verify/93ab1652-cf9c-e811-80e7-14187735bc96/4202dc3e-cf9c-e811-80e7-14187735bc96?display=full"-->
+                        <!--target="_blank">Military Tickets</a>-->
+                        <!--<br>-->
+                        <a class="btn  btn-sm blackBtn"
+                           href="https://www1.ticketmaster.com/san-antonio-spurs-vs-houston-rockets-san-antonio-texas-11-10-2018/event/3A005506816222EF?artistid=806012&majorcatid=10004&minorcatid=7&brand=spurs"
+                           target="_blank">Tickets</a>
+                        <!--</div>-->
+                    </li>
+                </ul>
+                <a style="font-size:12px; color:darkblue !important;;" href="https://www.nba.com/spurs/salute"
+                   target="_blank">Click to buy discounted military tickets.</a>
+
+
+            </div>
+        </div>
+
+
+        <!--Start of mix-target box-->
+        <div style="display: inline-block" class="mix november concert beer col-md-4 col-xs-12 col-sm-6">
+            <div class="gray-box"><a href="#"></a></div>
+            <img class="concert-img"
+                 src="http://i.cdn.turner.com/nba/nba/.element/media/2.0/teamsites/spurs/Schad/img/Spurs/Promo/brigb.jpg" width="100%"
+            >
+            <div class="inner-box">
+
+                <ul class="info-list">
+                    <li class="info-list-item"><img
+                            src="https://i.cdn.turner.com/nba/nba/.element/img/1.0/teamsites/logos/teamlogos_80x64/mem.gif">
+                    </li>
+                    <li class="center-info-item"><strong>Wednesday</strong><br>November 21, 2018</li>
+                    <li class="info-list-item">
+                        <!--<div class="buyButton">-->
+
+
+
+                        <a class="btn btn-sm blackBtn"
+                           href="https://www1.ticketmaster.com/spurs-v-grizzlies-with-post-game-concert-ft-bri-bagwell/event/3A005506816C22FD?brand=spurs"
+                           target="_blank">Tickets</a>
+                        <a class="btn btn-sm blackBtn"
+                           href="http://www.ticketmaster.com/event/3A005506816C22FD?did=kvalue"
+                           target="_blank">Ticket + 2 Beers</a>
+
+
+
+                        <!--</div>-->
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+
+        <!--Start of mix-target box-->
+        <div style="display: inline-block" class="mix december beer col-md-4 col-xs-12 col-sm-6"
+        >
+            <div class="gray-box"><a href="#"></a></div>
+            <img class="concert-img"
+                 src="https://www.nba.com/.element/media/2.0/teamsites/spurs/Rosalie/img/spurs/ticket2beers1.jpg" width="100%">
+            <div class="inner-box">
+
+                <ul class="info-list">
+                    <li class="info-list-item"><img
+                            src="https://i.cdn.turner.com/nba/nba/.element/img/1.0/teamsites/logos/teamlogos_80x64/phx.gif">
+                    </li>
+                    <li class="center-info-item"><strong>Tuesday</strong><br>December 11, 2018</li>
+                    <li class="info-list-item">
+                        <!--<div class="buyButton">-->
+
+                        <a class="btn btn-sm blackBtn"
+                           href="http://www.ticketmaster.com/event/3A00550680C621D7?did=kvalue"
+                           target="_blank">Tickets</a>
+                        <!--</div>-->
+                    </li>
+                </ul>
+
+
+            </div>
+        </div>
+
+        <!--Start of mix-target box-->
+        <div style="display: inline-block" class="december beer concert col-md-4 col-xs-12 mix col-sm-6">
+            <div class="gray-box"><a href="#"></a></div>
+            <img class="concert-img"
+                 src="http://i.cdn.turner.com/nba/nba/.element/media/2.0/teamsites/spurs/Schad/img/Spurs/Promo/otown1.jpg" width="100%">
+
+            <div class="inner-box">
+
+
+                <ul class="info-list">
+                    <li class="info-list-item"><img
+                            src="https://i.cdn.turner.com/nba/nba/.element/img/1.0/teamsites/logos/teamlogos_80x64/lac.gif">
+                    </li>
+                    <li class="center-info-item"><strong>Thursday</strong><br>December 13, 2018</li>
+                    <li class="info-list-item">
+                        <!--<div class="buyButton">-->
+
+
+                        <a class="btn btn-sm blackBtn"
+                           href="https://www1.ticketmaster.com/spurs-v-la-clippers-with-post-game-concert-ft-o-town/event/3A00550680CC21E2?brand=spurs"
+                           target="_blank">Tickets</a>
+                        <a class="btn btn-sm blackBtn"
+                           href="http://www.ticketmaster.com/event/3A00550680CC21E2?did=kvalue"
+                           target="_blank">Ticket + 2 Beers</a>
+
+
+
+                        <!--</div>-->
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+
+        <!--&lt;!&ndash;Start of mix-target box&ndash;&gt;-->
+        <!--<div style="display: inline-block" class=" december shirt col-md-4 col-xs-12 mix-target"-->
+        <!--data-order="6" data-year="4">-->
+        <!--<div class="gray-box"><a href="#">Holiday Game</a></div>-->
+        <!--<br><img-->
+        <!--src="https://i.cdn.turner.com/nba/nba/.element/img/1.0/teamsites/logos/teamlogos_80x64/min.gif">-->
+        <!--<p class="dayofweek">Friday</p>-->
+        <!--<p class="date">December 21, 2018</p>-->
+        <!--<div class="buyButton">-->
+
+        <!--<a class="btn btn-sm blackBtn"-->
+        <!--href="https://auth.govx.com/tickets/verify/93ab1652-cf9c-e811-80e7-14187735bc96/ba3a73fc-cf9c-e811-80e7-14187735bc96?display=full"-->
+        <!--target="_blank">Tickets</a></div>-->
+        <!--</div>-->
+
+        <!--Start of mix-target box-->
+        <div style="display: inline-block" class="mix december beer col-md-4 col-xs-12 col-sm-6">
+            <div class="gray-box"><a href="#"></a></div>
+            <img class="concert-img"
+                 src="https://www.nba.com/.element/media/2.0/teamsites/spurs/Rosalie/img/spurs/ticket2beers1.jpg" width="100%">
+            <div class="inner-box">
+
+                <ul class="info-list">
+                    <li class="info-list-item"><img
+                            src="https://i.cdn.turner.com/nba/nba/.element/img/1.0/teamsites/logos/teamlogos_80x64/phi.gif">
+                    </li>
+                    <li class="center-info-item"><strong>Monday</strong><br>December 17, 2018</li>
+                    <li class="info-list-item">
+                        <!--<div class="buyButton">-->
+
+                        <a class="btn btn-sm blackBtn"
+                           href="http://www.ticketmaster.com/event/3A00550680D521E8?did=kvalue"
+                           target="_blank">Tickets</a>
+                        <!--</div>-->
+                    </li>
+                </ul>
+
+
+            </div>
+        </div>
+
+        <!--Start of mix-target box-->
+        <div style="display: inline-block" class="mix december beer col-md-4 col-xs-12 col-sm-6"
+        >
+            <div class="gray-box"><a href="#"></a></div>
+            <img class="concert-img"
+                 src="https://www.nba.com/.element/media/2.0/teamsites/spurs/Rosalie/img/spurs/ticket2beers1.jpg" width="100%">
+            <div class="inner-box">
+
+                <ul class="info-list">
+                    <li class="info-list-item"><img
+                            src="https://i.cdn.turner.com/nba/nba/.element/img/1.0/teamsites/logos/teamlogos_80x64/den.gif">
+                    </li>
+                    <li class="center-info-item"><strong>Wednesday</strong><br>December 26, 2018</li>
+                    <li class="info-list-item">
+                        <!--<div class="buyButton">-->
+
+                        <a class="btn btn-sm blackBtn"
+                           href="http://www.ticketmaster.com/event/3A00550680DD21F1?did=kvalue"
+                           target="_blank">Tickets</a>
+                        <!--</div>-->
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!--Start of mix-target box-->
+        <div style="display: inline-block" class="mix december beer col-md-4 col-xs-12 col-sm-6"
+        >
+            <div class="gray-box"><a href="#"></a></div>
+            <img class="concert-img"
+                 src="https://www.nba.com/.element/media/2.0/teamsites/spurs/Rosalie/img/spurs/ticket2beers1.jpg" width="100%">
+            <div class="inner-box">
+
+                <ul class="info-list">
+                    <li class="info-list-item"><img
+                            src="https://i.cdn.turner.com/nba/nba/.element/img/1.0/teamsites/logos/teamlogos_80x64/bos.gif">
+                    </li>
+                    <li class="center-info-item"><strong>Monday</strong><br>December 31, 2018</li>
+                    <li class="info-list-item">
+                        <!--<div class="buyButton">-->
+
+                        <a class="btn btn-sm blackBtn"
+                           href="http://www.ticketmaster.com/event/3A00550680E121F4?did=kvalue"
+                           target="_blank">Tickets</a>
+                        <!--</div>-->
+                    </li>
+                </ul>
+
+
+            </div>
+        </div>
+
+        <!--Start of mix-target box-->
+        <div style="display: inline-block" class="mix january beer col-md-4 col-xs-12 col-sm-6"
+        >
+            <div class="gray-box"><a href="#"></a></div>
+            <img class="concert-img"
+                 src="https://www.nba.com/.element/media/2.0/teamsites/spurs/Rosalie/img/spurs/ticket2beers1.jpg" width="100%">
+            <div class="inner-box">
+
+                <ul class="info-list">
+                    <li class="info-list-item"><img
+                            src="https://i.cdn.turner.com/nba/nba/.element/img/1.0/teamsites/logos/teamlogos_80x64/tor.gif">
+                    </li>
+                    <li class="center-info-item"><strong>Thursday</strong><br>January 03, 2019</li>
+                    <li class="info-list-item">
+                        <!--<div class="buyButton">-->
+
+                        <a class="btn btn-sm blackBtn"
+                           href="http://www.ticketmaster.com/event/3A00550680E521FA?did=kvalue"
+                           target="_blank">Tickets</a>
+                        <!--</div>-->
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+
+        <!--Start of mix-target box-->
+        <div style="display: inline-block" class="mix january beer col-md-4 col-xs-12 col-sm-6"
+        >
+            <div class="gray-box"><a href="#"></a></div>
+            <img class="concert-img"
+                 src="https://www.nba.com/.element/media/2.0/teamsites/spurs/Rosalie/img/spurs/ticket2beers1.jpg" width="100%">
+            <div class="inner-box">
+
+                <ul class="info-list">
+                    <li class="info-list-item"><img
+                            src="https://i.cdn.turner.com/nba/nba/.element/img/1.0/teamsites/logos/teamlogos_80x64/okc.gif">
+                    </li>
+                    <li class="center-info-item"><strong>Thursday</strong><br>January 10, 2019</li>
+                    <li class="info-list-item">
+                        <!--<div class="buyButton">-->
+
+                        <a class="btn btn-sm blackBtn"
+                           href="http://www.ticketmaster.com/event/3A00550680EE220F?did=kvalue"
+                           target="_blank">Tickets</a>
+                        <!--</div>-->
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+
+        <!--Start of mix-target box-->
+        <div style="display: inline-block" class="mix january beer col-md-4 col-xs-12 col-sm-6"
+        >
+            <div class="gray-box"><a href="#"></a></div>
+            <img class="concert-img"
+                 src="https://www.nba.com/.element/media/2.0/teamsites/spurs/Rosalie/img/spurs/ticket2beers1.jpg" width="100%">
+            <div class="inner-box">
+
+                <ul class="info-list">
+                    <li class="info-list-item"><img
+                            src="https://i.cdn.turner.com/nba/nba/.element/img/1.0/teamsites/logos/teamlogos_80x64/cha_hornets.gif">
+                    </li>
+                    <li class="center-info-item"><strong>Monday</strong><br>January 14, 2019</li>
+                    <li class="info-list-item">
+                        <!--<div class="buyButton">-->
+                        <a class="btn btn-sm blackBtn"
+                           href="http://www.ticketmaster.com/event/3A00550680F32211?did=kvalue"
+                           target="_blank">Tickets</a>
+                        <!--</div>-->
+                    </li>
+                </ul>
+
+
+            </div>
+        </div>
+
+        <!--&lt;!&ndash;Start of mix-target box&ndash;&gt;-->
+        <!--<div style="display: inline-block" class="mix january shirt col-md-4 col-xs-12 "-->
+        <!--&gt;-->
+        <!--<div class="gray-box"><a href="#">MLK / Civil Rights Night</a></div>-->
+        <!--<div class="inner-box"><img-->
+        <!--src="https://i.cdn.turner.com/nba/nba/.element/img/1.0/teamsites/logos/teamlogos_80x64/lac.gif">-->
+        <!--<p class="opponent">Los Angeles Clippers</p>-->
+        <!--<p class="dayofweek">Sunday</p>-->
+        <!--<p class="date">January 20, 2019</p>-->
+        <!--<div class="buyButton">-->
+
+        <!--<a class="btn btn-sm blackBtn"-->
+        <!--href="https://auth.govx.com/tickets/verify/93ab1652-cf9c-e811-80e7-14187735bc96/ba3a73fc-cf9c-e811-80e7-14187735bc96?display=full"-->
+        <!--target="_blank">Tickets</a></div>-->
+        <!--</div>-->
+        <!--</div>-->
+
+        <!--Start of mix-target box-->
+        <div style="display: inline-block" class="mix january veteran col-md-4 col-xs-12 col-sm-6"
+        >
+            <div class="gray-box"><a href="#"></a></div>
+            <img class="concert-img"
+                 src="https://www.nba.com/.element/media/2.0/teamsites/spurs/Rosalie/img/spurs/salutenight.jpg" width="100%">
+            <div class="inner-box">
+
+                <ul class="info-list">
+                    <li class="info-list-item"><img
+                            src="https://i.cdn.turner.com/nba/nba/.element/img/1.0/teamsites/logos/teamlogos_80x64/was.gif">
+                    </li>
+                    <li class="center-info-item"><strong>Sunday</strong><br>January 27, 2019</li>
+                    <li class="info-list-item">
+                        <!--<div class="buyButton">-->
+
+
+                        <a class="btn btn-sm blackBtn"
+                           href="https://www1.ticketmaster.com/san-antonio-spurs-vs-washington-wizards-san-antonio-texas-01-27-2019/event/3A00550680FB2223?artistid=806012&majorcatid=10004&minorcatid=7&brand=spurs"
+                           target="_blank">Tickets</a>
+                        <!--</div>-->
+                    </li>
+                </ul>
+
+                <a style="font-size:12px; color: darkblue;" href="https://www.nba.com/spurs/salute" target="_blank">Click
+                    to buy discounted military tickets.</a>
+            </div>
+        </div>
+
+        <!--Start of mix-target box-->
+        <div style="display: inline-block" class="mix january beer col-md-4 col-xs-12 col-sm-6"
+        >
+            <div class="gray-box"><a href="#"></a></div>
+            <img class="concert-img"
+                 src="https://www.nba.com/.element/media/2.0/teamsites/spurs/Rosalie/img/spurs/ticket2beers1.jpg" width="100%">
+            <div class="inner-box">
+
+                <ul class="info-list">
+                    <li class="info-list-item"><img
+                            src="https://i.cdn.turner.com/nba/nba/.element/img/1.0/teamsites/logos/teamlogos_80x64/phx.gif">
+                    </li>
+                    <li class="center-info-item"><strong>Tuesday</strong><br>January 29, 2019</li>
+                    <li class="info-list-item">
+                        <!--<div class="buyButton">-->
+
+                        <a class="btn btn-sm blackBtn"
+                           href="http://www.ticketmaster.com/event/3A00550680FF222D?did=kvalue"
+                           target="_blank">Tickets</a>
+                        <!--</div>-->
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!--Start of mix-target box-->
+        <div style="display: inline-block" class="mix january beer col-md-4 col-xs-12 col-sm-6"
+        >
+            <div class="gray-box"><a href="#"></a></div>
+            <img class="concert-img"
+                 src="https://www.nba.com/.element/media/2.0/teamsites/spurs/Rosalie/img/spurs/ticket2beers1.jpg" width="100%">
+            <div class="inner-box">
+
+
+                <ul class="info-list">
+                    <li class="info-list-item"><img
+                            src="https://i.cdn.turner.com/nba/nba/.element/img/1.0/teamsites/logos/teamlogos_80x64/bkn.gif">
+                    </li>
+                    <li class="center-info-item"><strong>Thursday</strong><br>January 31, 2019</li>
+                    <li class="info-list-item">
+                        <!--<div class="buyButton">-->
+
+                        <a class="btn btn-sm blackBtn"
+                           href="http://www.ticketmaster.com/event/3A00550681042235?did=kvalue"
+                           target="_blank">Tickets</a>
+                        <!--</div>-->
+                    </li>
+                </ul>
+
+
+            </div>
+        </div>
+
+        <!--Start of mix-target box-->
+        <div style="display: inline-block" class="mix february concert beer col-md-4 col-xs-12 col-sm-6"
+        >
+            <div class="gray-box"><a href="#"></a></div>
+            <img class="concert-img"
+                 src="https://www.nba.com/.element/media/2.0/teamsites/spurs/Schad/img/Spurs/rich.jpg" width="100%">
+            <div class="inner-box">
+
+                <ul class="info-list">
+                    <li class="info-list-item"><img
+                            src="https://i.cdn.turner.com/nba/nba/.element/img/1.0/teamsites/logos/teamlogos_80x64/det.gif">
+                    </li>
+                    <li class="center-info-item"><strong>Wednesday</strong><br>February 27, 2019</li>
+                    <li class="info-list-item">
+                        <!--<div class="buyButton">-->
+
+                        <a class="btn btn-sm blackBtn"
+                           href="https://www.ticketmaster.com/san-antonio-spurs-vs-detroit-pistons-san-antonio-texas-02-27-2019/event/3A005506810D2243?artistid=806012&majorcatid=10004&minorcatid=7&brand=spurs"
+                           target="_blank">Tickets</a>
+                        <a class="btn btn-sm blackBtn"
+                           href="http://www.ticketmaster.com/event/3A005506810D2243?did=kvalue"
+                           target="_blank">Ticket + 2 Beers</a>
+                        <!--</div>-->
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+
+        <!--Start of mix-target box-->
+        <div style="display: inline-block" class="mix beer march col-md-4 col-xs-12 col-sm-6">
+            <div class="gray-box"><a href="#"></a></div>
+            <img class="concert-img"
+                 src="https://www.nba.com/.element/media/2.0/teamsites/spurs/Rosalie/img/spurs/ticket2beers1.jpg" width="100%">
+            <div class="inner-box">
+
+                <ul class="info-list">
+                    <li class="info-list-item"><img
+                            src="https://i.cdn.turner.com/nba/nba/.element/img/1.0/teamsites/logos/teamlogos_80x64/den.gif">
+                    </li>
+                    <li class="center-info-item"><strong>Monday</strong><br>March 04, 2019</li>
+                    <li class="info-list-item">
+                        <!--<div class="buyButton">-->
+
+                        <a class="btn btn-sm blackBtn"
+                           href="http://www.ticketmaster.com/event/3A00550681172249?did=kvalue"
+                           target="_blank">Tickets</a>
+                        <!--</div>-->
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+
+        <!--&lt;!&ndash;Start of mix-target box&ndash;&gt;-->
+        <!--<div style="display: inline-block" class="mix march col-md-4 col-xs-12 ">-->
+        <!--<div class="gray-box"><a href="#">Coyote's Birthday</a></div>-->
+        <!--<div class="inner-box"><img-->
+        <!--src="https://i.cdn.turner.com/nba/nba/.element/img/1.0/teamsites/logos/teamlogos_80x64/mil.gif">-->
+        <!--<p class="opponent">Milwaukee Bucks</p>-->
+        <!--<p class="dayofweek">Sunday</p>-->
+        <!--<p class="date">March 10, 2019</p>-->
+        <!--<div class="buyButton">-->
+
+        <!--<a class="btn btn-sm blackBtn"-->
+        <!--href="https://auth.govx.com/tickets/verify/93ab1652-cf9c-e811-80e7-14187735bc96/ba3a73fc-cf9c-e811-80e7-14187735bc96?display=full"-->
+        <!--target="_blank">Tickets</a></div>-->
+        <!--</div>-->
+        <!--</div>-->
+
+        <!--Start of mix-target box-->
+        <div style="display: inline-block" class="mix march beer col-md-4 col-xs-12  col-sm-6"
+        >
+            <div class="gray-box"><a href="#"></a></div>
+            <img class="concert-img"
+                 src="https://www.nba.com/.element/media/2.0/teamsites/spurs/Rosalie/img/spurs/ticket2beers1.jpg" width="100%"
+            >
+            <div class="inner-box">
+
+                <ul class="info-list">
+                    <li class="info-list-item"><img
+                            src="https://i.cdn.turner.com/nba/nba/.element/img/1.0/teamsites/logos/teamlogos_80x64/gsw.gif">
+                    </li>
+                    <li class="center-info-item"><strong>Monday</strong><br>March 18, 2019</li>
+                    <li class="info-list-item">
+                        <!--<div class="buyButton">-->
+
+                        <a class="btn btn-sm blackBtn"
+                           href="http://www.ticketmaster.com/event/3A00550681282265?did=kvalue"
+                           target="_blank">Tickets</a>
+                        <!--</div>-->
+                    </li>
+                </ul>
+
+
+            </div>
+        </div>
+
+        <!--Start of mix-target box-->
+        <div style="display: inline-block" class="mix  march veteran beer col-md-4 col-xs-12 col-sm-6">
+            <div class="gray-box"><a href="#"></a></div>
+            <img class="concert-img"
+                 src="https://www.nba.com/.element/media/2.0/teamsites/spurs/Rosalie/img/spurs/militaryappreciation.jpg" width="100%">
+            <div class="inner-box">
+
+                <ul class="info-list">
+                    <li class="info-list-item"><img
+                            src="https://i.cdn.turner.com/nba/nba/.element/img/1.0/teamsites/logos/teamlogos_80x64/mia.gif">
+                    </li>
+                    <li class="center-info-item"><strong>Wednesday</strong><br>March 20, 2019</li>
+                    <li class="info-list-item">
+                        <!--<div class="buyButton">-->
+
+                        <a class="btn btn-sm blackBtn"
+                           href="http://www.ticketmaster.com/event/3A005506812D2267?did=kvalue"
+                           target="_blank">Tickets</a>
+
+                        <!--</div>-->
+                    </li>
+                </ul>
+                <a style="font-size:12px; color: darkblue;" href="https://www.nba.com/spurs/salute" target="_blank">Click
+                    to buy discounted military tickets.</a>
+
+            </div>
+        </div>
+
+
+        <!--Start of mix-target box-->
+        <div style="display: inline-block" class="mix march beer col-md-4 col-xs-12  col-sm-6"
+        >
+            <div class="gray-box"><a href="#"></a></div>
+            <img class="concert-img"
+                 src="https://www.nba.com/.element/media/2.0/teamsites/spurs/Rosalie/img/spurs/ticket2beers1.jpg" width="100%">
+            <div class="inner-box">
+
+                <ul class="info-list">
+                    <li class="info-list-item"><img
+                            src="https://i.cdn.turner.com/nba/nba/.element/img/1.0/teamsites/logos/teamlogos_80x64/cle.gif">
+                    </li>
+                    <li class="center-info-item"><strong>Thursday</strong><br>March 28, 2019</li>
+                    <li class="info-list-item">
+                        <!--<div class="buyButton">-->
+
+                        <a class="btn btn-sm blackBtn"
+                           href="http://www.ticketmaster.com/event/3A0055068131226E?did=kvalue"
+                           target="_blank">Tickets</a>
+                        <!--</div>-->
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+
+        <!--Start of mix-target box-->
+        <div style="display:inline-block" class="mix beer april col-md-4 col-xs-12 col-sm-6">
+            <div class="gray-box"><a href="#"></a></div>
+            <img class="concert-img"
+                 src="https://www.nba.com/.element/media/2.0/teamsites/spurs/Rosalie/img/spurs/ticket2beers1.jpg" width="100%">
+            <div class="inner-box">
+
+                <ul class="info-list">
+                    <li class="info-list-item"><img
+                            src="https://i.cdn.turner.com/nba/nba/.element/img/1.0/teamsites/logos/teamlogos_80x64/atl.gif">
+                    </li>
+                    <li class="center-info-item"><strong>Tuesday</strong><br>April 02, 2019</li>
+                    <li class="info-list-item">
+                        <!--<div class="buyButton">-->
+
+                        <a class="btn btn-sm blackBtn"
+                           href="http://www.ticketmaster.com/event/3A005506813A2272?did=kvalue"
+                           target="_blank">Tickets</a>
+                        <!--</div>-->
+                    </li>
+                </ul>
+
+
+            </div>
+        </div>
+
+        <!--Start of mix-target box-->
+        <div style="display:inline-block" class="mix beer april col-md-4 col-xs-12 col-sm-6">
+            <div class="gray-box"><a href="#"></a></div>
+            <img class="concert-img"
+                 src="https://www.nba.com/.element/media/2.0/teamsites/spurs/Rosalie/img/spurs/ticket2beers1.jpg" width="100%">
+            <div class="inner-box">
+
+                <ul class="info-list">
+                    <li class="info-list-item"><img
+                            src="https://i.cdn.turner.com/nba/nba/.element/img/1.0/teamsites/logos/teamlogos_80x64/dal.gif">
+                    </li>
+                    <li class="center-info-item"><strong>Wednesday</strong><br>April 10, 2019</li>
+                    <li class="info-list-item">
+                        <!--<div class="buyButton">-->
+
+                        <a class="btn btn-sm blackBtn"
+                           href="http://www.ticketmaster.com/event/3A005506813E2274?did=kvalue"
+                           target="_blank">Tickets</a>
+                        <!--</div>-->
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+
+        <div class="noResults" style="display:none;"><p>Sorry, no results were found.</p>
+
+
+        </div>
+    </div>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" type="text/javascript"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+
+<script src="https://www.nba.com/.element/media/2.0/teamsites/spurs/Rosalie/jquery.mixitup.min.js"></script>
+<script src="https://www.nba.com/.element/media/2.0/teamsites/spurs/Rosalie/mixitup-advanced.js"></script>
+<script>
+
+    var mixedFilter = {
+
+        $filters: null,
+        $reset: null,
+        groups: [],
+        outputArray: [],
+        outputString: '',
+
+        init: function () {
+
+
+            var self = this;
+
+            self.$filters = $('#Filters');
+            self.$container = $('#Container');
+            self.$filters.find('fieldset').each(function () {
+
+                var $this = $(this);
+
+                self.groups.push({
+
+                    $inputsCheckbox: $this.find('input'),
+                    $inputsSelect: $this.find('select'),
+                    //  $inputsText : $this.find('input[type="text"]'),
+                    active: "[]",
+                    tracker: false
+
+                });
+
+            });
+
+            self.bindHandlers();
+
+
+        },
+
+
+        // The bindHandlers method will listen for whenever a button is clicked.
+        bindHandlers: function () {
+
+            var self = this;
+
+            // Handle input clicks
+            self.$filters.on('change', function (e) {
+
+                e.preventDefault();
+                $('.noResults').hide();
+
+                self.parseFilters();
+            });
+
+        },
+
+
+        //   // The parseFilters method checks which filters are active in each group:
+
+        parseFilters: function () {
+
+            var self = this;
+
+            for (var i = 0, group; group = self.groups[i]; i++) {
+                group.active = []; // reset arrays
+                var activeSelect = group.$inputsSelect.length ? group.$inputsSelect.val() || '' : '';
+                group.$inputsCheckbox.each(function () {
+                    $(this).is(':checked') && group.active.push(this.value);
+
+                });
+                group.active.length && (group.tracker = 0);
+
+                group.active = group.active + activeSelect;
+
+            }
+
+            self.concatenate();
+
+        },
+
+        // The "concatenate" method will crawl through each group, concatenating filters as desired:
+
+        concatenate: function () {
+            var self = this;
+
+            self.outputString = ''; // Reset output string
+
+            for (var i = 0, group; group = self.groups[i]; i++) {
+                self.outputString += group.active;
+            }
+
+            // If the output string is empty, show all rather than none:
+            !self.outputString.length && (self.outputString = 'all');
+
+            console.log(self.outputString);
+
+            // ^ we can check the console here to take a look at the filter string that is produced
+
+            // Send the output string to MixItUp via the 'filter' method:
+            if (self.$container.mixItUp('isLoaded')) {
+                self.$container.mixItUp('filter', self.outputString);
+            }
+        }
+
+
+    };
+
+
+    // On document ready, initialise our code.
+
+    $(function () {
+
+
+        // Initialize buttonFilter code
+
+        mixedFilter.init();
+
+        // Instantiate MixItUp
+
+        $('#Container').mixItUp({
+            controls: {
+                enable: false // we won't be needing these
+            },
+            callbacks: {
+                onMixFail: function () {
+
+
+                    $('.noResults').show();
+
+                    console.log('no-results');
+                }
+            }
+        });
+
+        //search filtering
+        //credits https://codepen.io/edprats/pen/pzAdg
+        var inputText;
+        var $matching = $();
+        var delay = (function () {
+            var timer = 0;
+            return function (callback, ms) {
+                clearTimeout(timer);
+                timer = setTimeout(callback, ms);
+            };
+        })();
+        $("input[type='text']").keyup(function () {
+            // Delay function invoked to make sure user stopped typing
+            delay(function () {
+                inputText = $("input[type='text']").val().toLowerCase();
+                // Check to see if input field is empty
+                if ((inputText.length) > 0) {
+                    $('.mix').each(function () {
+                        var $this = $(this);
+                        // add item to be filtered out if input text matches items inside the title
+                        if ($this.attr('class').toLowerCase().match(inputText)) {
+                            $matching = $matching.add(this);
+                        } else {
+                            // removes any previously matched item
+                            $matching = $matching.not(this);
+                        }
+                    });
+                    $('#Container').mixItUp('filter', $matching);
+                } else {
+                    // resets the filter to show all item if input is empty
+                    $('#Container').mixItUp('filter', 'all');
+                }
+            }, 200);
+        });
+
+
+    });
+</script>
+
+
+</body>
+</html>
